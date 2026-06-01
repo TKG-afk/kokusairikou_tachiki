@@ -27,6 +27,21 @@
       padding: 0 12px;
     }
 
+    .top-youtube {
+      width: var(--page-width);
+      margin: 0 auto 14px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .top-youtube iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
     .pdf-pages {
       display: grid;
       gap: 0;
@@ -176,6 +191,10 @@
         padding: 0 6px;
       }
 
+      .top-youtube {
+        margin-top: 0;
+      }
+
       .youtube-player {
         left: 8%;
         width: 84%;
@@ -216,8 +235,18 @@
 </head>
 <body>
   <main aria-label="112_立木先生2 PDF viewer">
+    <section class="top-youtube" aria-label="YouTube video">
+      <iframe
+        src="https://www.youtube.com/embed/oN-B9u9W87g"
+        title="YouTube video player"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </section>
     <div class="pdf-pages">
-      <img class="pdf-page" src="assets/page-01.png" alt="1ページ目" width="1785" height="2104">
+      <img class="pdf-page" src="assets/page-01.png" alt="1ページ目" width="1785" height="2194">
       <img class="pdf-page" src="assets/page-02.png" alt="2ページ目" width="1785" height="2402" loading="lazy">
       <img class="pdf-page" src="assets/page-03.png" alt="3ページ目" width="1785" height="1827" loading="lazy">
       <img class="pdf-page" src="assets/page-04.png" alt="4ページ目" width="1785" height="1869" loading="lazy">
