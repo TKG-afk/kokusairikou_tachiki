@@ -56,9 +56,64 @@
       background: #fff;
     }
 
+    .page-frame {
+      position: relative;
+      width: var(--page-width);
+      background: #fff;
+    }
+
+    .page-frame .pdf-page {
+      width: 100%;
+    }
+
+    .works-panel {
+      position: absolute;
+      left: 9%;
+      top: 33%;
+      width: 82%;
+      display: grid;
+      gap: 20px;
+    }
+
+    .works-title {
+      margin: 0;
+      color: #1c4ba6;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: clamp(28px, 3.2vw, 46px);
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .works-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .works-list img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+
     @media (max-width: 720px) {
       main {
         padding: 0 6px;
+      }
+
+      .works-panel {
+        left: 7.5%;
+        top: 31%;
+        width: 85%;
+        gap: 12px;
+      }
+
+      .works-list {
+        gap: 10px;
       }
     }
 
@@ -119,7 +174,22 @@
       <img class="pdf-page" src="assets/page-05.png" alt="5ページ目" width="1785" height="2071" loading="lazy">
       <img class="pdf-page" src="assets/page-06.png" alt="6ページ目" width="1785" height="2526" loading="lazy">
       <img class="pdf-page" src="assets/page-07.png" alt="7ページ目" width="1785" height="2198" loading="lazy">
-      <img class="pdf-page" src="assets/page-08.png" alt="8ページ目" width="1785" height="2526" loading="lazy">
+      <div class="page-frame">
+        <img class="pdf-page" src="assets/page-08.png" alt="8ページ目" width="1785" height="2526" loading="lazy">
+        <section class="works-panel" aria-label="学生作品と東京ゲームショウ">
+          <h2 class="works-title">学生作品＆東京ゲームショウ</h2>
+          <ul class="works-list">
+            <li><img src="assets/sakuhin/sakuhin-01.jpg" alt="学生作品画像 1" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-02.jpg" alt="学生作品画像 2" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-03.jpg" alt="学生作品画像 3" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-04.jpg" alt="学生作品画像 4" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-05.jpg" alt="学生作品画像 5" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-06.jpg" alt="学生作品画像 6" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-07.jpg" alt="学生作品画像 7" width="2171" height="781" loading="lazy"></li>
+            <li><img src="assets/sakuhin/sakuhin-08.jpg" alt="学生作品画像 8" width="2171" height="781" loading="lazy"></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </main>
 </body>
