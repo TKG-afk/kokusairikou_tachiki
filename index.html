@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>112_立木先生2</title>
+  <title>112_tachiki_2</title>
   <style>
     :root {
       color-scheme: light;
@@ -56,160 +56,9 @@
       background: #fff;
     }
 
-    .page-frame {
-      position: relative;
-      width: var(--page-width);
-      background: #fff;
-    }
-
-    .page-frame .pdf-page {
-      width: 100%;
-    }
-
-    .youtube-player {
-      position: absolute;
-      left: 14.5%;
-      top: 43%;
-      width: 71%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-    }
-
-    .youtube-player video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      object-fit: contain;
-    }
-
-    .player-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      border: 0;
-      background: rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-      transition: opacity 160ms ease;
-    }
-
-    .youtube-player.is-playing .player-overlay {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .play-badge {
-      width: 76px;
-      height: 54px;
-      border-radius: 14px;
-      background: #ff0033;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
-    }
-
-    .play-badge::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border-top: 13px solid transparent;
-      border-bottom: 13px solid transparent;
-      border-left: 22px solid #fff;
-      margin-left: 5px;
-    }
-
-    .player-controls {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: grid;
-      gap: 8px;
-      padding: 42px 12px 10px;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
-      color: #fff;
-      opacity: 0;
-      transition: opacity 160ms ease;
-    }
-
-    .youtube-player:hover .player-controls,
-    .youtube-player:focus-within .player-controls,
-    .youtube-player:not(.is-playing) .player-controls {
-      opacity: 1;
-    }
-
-    .progress {
-      width: 100%;
-      height: 4px;
-      margin: 0;
-      accent-color: #ff0033;
-      cursor: pointer;
-    }
-
-    .control-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 32px;
-    }
-
-    .control-button {
-      width: 32px;
-      height: 32px;
-      border: 0;
-      border-radius: 50%;
-      background: transparent;
-      color: #fff;
-      cursor: pointer;
-      font-size: 18px;
-      line-height: 1;
-      display: grid;
-      place-items: center;
-    }
-
-    .control-button:hover,
-    .control-button:focus-visible {
-      background: rgba(255, 255, 255, 0.14);
-      outline: none;
-    }
-
-    .time-readout {
-      font-size: 13px;
-      line-height: 1;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .spacer {
-      flex: 1;
-    }
-
     @media (max-width: 720px) {
       main {
         padding: 0 6px;
-      }
-
-      .top-youtube {
-        margin-top: 0;
-      }
-
-      .youtube-player {
-        left: 8%;
-        width: 84%;
-      }
-
-      .play-badge {
-        width: 58px;
-        height: 42px;
-        border-radius: 11px;
-      }
-
-      .play-badge::before {
-        border-top-width: 10px;
-        border-bottom-width: 10px;
-        border-left-width: 17px;
       }
     }
 
@@ -226,19 +75,15 @@
         width: 100%;
         page-break-after: always;
       }
-
-      .youtube-player {
-        display: none;
-      }
     }
   </style>
 </head>
 <body>
-  <main aria-label="112_立木先生2 PDF viewer">
+  <main aria-label="112 tachiki 2 PDF viewer">
     <section class="top-youtube" aria-label="YouTube video">
       <iframe
         src="https://www.youtube.com/embed/oN-B9u9W87g"
-        title="YouTube video player"
+        title="YouTube video player 1"
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -265,6 +110,7 @@
         allowfullscreen>
       </iframe>
     </section>
+
     <div class="pdf-pages">
       <img class="pdf-page" src="assets/page-01.png" alt="1ページ目" width="1785" height="2194">
       <img class="pdf-page" src="assets/page-02.png" alt="2ページ目" width="1785" height="2402" loading="lazy">
@@ -273,96 +119,8 @@
       <img class="pdf-page" src="assets/page-05.png" alt="5ページ目" width="1785" height="2071" loading="lazy">
       <img class="pdf-page" src="assets/page-06.png" alt="6ページ目" width="1785" height="2526" loading="lazy">
       <img class="pdf-page" src="assets/page-07.png" alt="7ページ目" width="1785" height="2198" loading="lazy">
-      <div class="page-frame">
-        <img class="pdf-page" src="assets/page-08.png" alt="8ページ目" width="1785" height="2526" loading="lazy">
-        <section id="video-player" class="youtube-player" aria-label="動画プレイヤー">
-          <video preload="none" playsinline poster="assets/game-genome-tgs-poster.jpg">
-            <source src="assets/game-genome-tgs-light.mp4" type="video/mp4">
-          </video>
-          <button class="player-overlay" type="button" aria-label="再生">
-            <span class="play-badge" aria-hidden="true"></span>
-          </button>
-          <div class="player-controls">
-            <input class="progress" type="range" min="0" max="1000" value="0" aria-label="再生位置">
-            <div class="control-row">
-              <button class="control-button play-toggle" type="button" aria-label="再生">▶</button>
-              <span class="time-readout">0:00 / 0:00</span>
-              <span class="spacer"></span>
-              <button class="control-button mute-toggle" type="button" aria-label="ミュート">♪</button>
-              <button class="control-button fullscreen-toggle" type="button" aria-label="全画面">⛶</button>
-            </div>
-          </div>
-        </section>
-      </div>
+      <img class="pdf-page" src="assets/page-08.png" alt="8ページ目" width="1785" height="2526" loading="lazy">
     </div>
   </main>
-  <script>
-    const player = document.querySelector(".youtube-player");
-    const video = player.querySelector("video");
-    const overlay = player.querySelector(".player-overlay");
-    const playToggle = player.querySelector(".play-toggle");
-    const muteToggle = player.querySelector(".mute-toggle");
-    const fullscreenToggle = player.querySelector(".fullscreen-toggle");
-    const progress = player.querySelector(".progress");
-    const timeReadout = player.querySelector(".time-readout");
-    const knownDuration = 135.274;
-
-    const formatTime = (seconds) => {
-      if (!Number.isFinite(seconds)) return "0:00";
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
-      return `${mins}:${secs}`;
-    };
-
-    const updateState = () => {
-      player.classList.toggle("is-playing", !video.paused && !video.ended);
-      playToggle.textContent = video.paused || video.ended ? "▶" : "Ⅱ";
-      playToggle.setAttribute("aria-label", video.paused || video.ended ? "再生" : "一時停止");
-      muteToggle.textContent = video.muted ? "×" : "♪";
-      const duration = Number.isFinite(video.duration) ? video.duration : knownDuration;
-      timeReadout.textContent = `${formatTime(video.currentTime)} / ${formatTime(duration)}`;
-      if (duration > 0) {
-        progress.value = Math.round((video.currentTime / duration) * 1000);
-      }
-    };
-
-    const togglePlay = async () => {
-      if (video.paused || video.ended) {
-        await video.play();
-      } else {
-        video.pause();
-      }
-    };
-
-    overlay.addEventListener("click", togglePlay);
-    playToggle.addEventListener("click", togglePlay);
-    video.addEventListener("click", togglePlay);
-    video.addEventListener("loadedmetadata", updateState);
-    video.addEventListener("timeupdate", updateState);
-    video.addEventListener("play", updateState);
-    video.addEventListener("pause", updateState);
-    video.addEventListener("ended", updateState);
-
-    progress.addEventListener("input", () => {
-      if (Number.isFinite(video.duration) && video.duration > 0) {
-        video.currentTime = (Number(progress.value) / 1000) * video.duration;
-      }
-    });
-
-    muteToggle.addEventListener("click", () => {
-      video.muted = !video.muted;
-      updateState();
-    });
-
-    fullscreenToggle.addEventListener("click", () => {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else {
-        player.requestFullscreen();
-      }
-    });
-
-    updateState();
-  </script>
 </body>
 </html>
