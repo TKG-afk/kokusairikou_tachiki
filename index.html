@@ -42,6 +42,34 @@
       display: block;
     }
 
+    .open-campus-button {
+      position: fixed;
+      top: 0;
+      right: max(12px, calc((100vw - 960px) / 2 + 22px));
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      width: 158px;
+      min-height: 62px;
+      padding: 8px 12px;
+      border-radius: 0 0 8px 8px;
+      background: #dc2d26;
+      color: #fff;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.28;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .open-campus-button:hover,
+    .open-campus-button:focus-visible {
+      background: #c92520;
+    }
+
     .pdf-pages {
       display: grid;
       gap: 0;
@@ -132,6 +160,14 @@
       .works-list {
         gap: 10px;
       }
+
+      .open-campus-button {
+        right: 10px;
+        width: 150px;
+        min-height: 56px;
+        padding: 7px 10px;
+        font-size: 13px;
+      }
     }
 
     @media print {
@@ -147,10 +183,17 @@
         width: 100%;
         page-break-after: always;
       }
+
+      .open-campus-button {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+  <a class="open-campus-button" href="https://www.school-go.info/3e1l5jk/itc/form.php?fno=27&amp;fsno=1&amp;openExternalBrowser=1&amp;_gl=1*7ta4c4*_ga*MTgwMDY0Mzk2MC4xNzc4MjE2MzY2*_ga_GDZ3NWL1T9*czE3ODAzNjM4MzckbzEwJGcxJHQxNzgwMzYzODQ0JGo1MyRsMCRoMTk1MjYyMjg5" target="_blank" rel="noopener">
+    オープンキャンパス<br>はここから！
+  </a>
   <main aria-label="112 tachiki 2 PDF viewer">
     <section class="top-youtube" aria-label="YouTube video">
       <iframe
